@@ -37,7 +37,7 @@ public extension Reer where Base: UIView {
     
     /// ReerKit: Shortcut for frame.origin.x
     var x: CGFloat {
-        get { return base.frame.origin.x }
+        get { return base.frame.minX }
         set {
             var frame = base.frame
             frame.origin.x = newValue
@@ -47,7 +47,7 @@ public extension Reer where Base: UIView {
     
     /// ReerKit: Shortcut for frame.origin.y
     var y: CGFloat {
-        get { return base.frame.origin.y }
+        get { return base.frame.minY }
         set {
             var frame = base.frame
             frame.origin.y = newValue
@@ -57,7 +57,7 @@ public extension Reer where Base: UIView {
     
     /// ReerKit: Shortcut for frame.size.width
     var width: CGFloat {
-        get { return base.frame.size.width }
+        get { return base.frame.width }
         set {
             var frame = base.frame
             frame.size.width = newValue
@@ -67,7 +67,7 @@ public extension Reer where Base: UIView {
     
     /// ReerKit: Shortcut for frame.size.height
     var height: CGFloat {
-        get { return base.frame.size.height }
+        get { return base.frame.height }
         set {
             var frame = base.frame
             frame.size.height = newValue
@@ -77,7 +77,7 @@ public extension Reer where Base: UIView {
     
     /// ReerKit: Shortcut for frame.origin.x
     var left: CGFloat {
-        get { return base.frame.origin.x }
+        get { return base.frame.minX }
         set {
             var frame = base.frame
             frame.origin.x = newValue
@@ -87,17 +87,17 @@ public extension Reer where Base: UIView {
     
     /// ReerKit: Shortcut for frame.origin.x + frame.size.width
     var right: CGFloat {
-        get { return base.frame.origin.x + base.frame.size.width }
+        get { return base.frame.maxX }
         set {
             var frame = base.frame
-            frame.origin.x = newValue - frame.size.width
+            frame.origin.x = newValue - frame.width
             base.frame = frame
         }
     }
     
     /// ReerKit: Shortcut for frame.origin.y
     var top: CGFloat {
-        get { return base.frame.origin.y }
+        get { return base.frame.minY }
         set {
             var frame = base.frame
             frame.origin.y = newValue
@@ -107,7 +107,7 @@ public extension Reer where Base: UIView {
     
     /// ReerKit: Shortcut for frame.origin.y + frame.size.height
     var bottom: CGFloat {
-        get { return base.frame.origin.y + base.frame.size.height }
+        get { return base.frame.maxY }
         set {
             var frame = base.frame
             frame.origin.y = newValue - frame.size.height
